@@ -1,0 +1,13 @@
+services:
+  database:
+    image: mariadb:11.6
+    environment:
+      MARIADB_DATABASE: app
+      MARIADB_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - database-volume:/var/lib/mysql:Z
+
+volumes:
+  database-volume:
